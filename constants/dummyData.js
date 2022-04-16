@@ -10,12 +10,12 @@ const myProfile = {
 const categories = [
     {
         id: 1,
-        name: "Fast Food",
+        name: "Veg",
         icon: icons.burger
     },
     {
         id: 2,
-        name: "Fruit Item",
+        name: "NonVeg",
         icon: icons.cherry
     },
     {

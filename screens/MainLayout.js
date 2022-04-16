@@ -35,12 +35,12 @@ import {Header} from "../components"
 
 
 
-const MainLayout = ({navigation}) => {
+const MainLayout = () => {
    
   
     return (
         <View>
-        
+        <Home />
         
         </View>
             
