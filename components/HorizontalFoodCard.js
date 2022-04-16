@@ -47,7 +47,7 @@ export default function HorizontalFoodCard({containerStyle,imageStyle,item,onPre
        {item.description}</Text>
        {/* price*/}
        <Text style={{...FONTS.h2,marginTop:SIZES.base}}>
-       {item.price}</Text>
+       Rs{item.price}</Text>
    </View>
 
    </TouchableOpacity>
