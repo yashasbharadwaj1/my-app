@@ -17,8 +17,7 @@ import Animated,{
 import {connect} from "react-redux";
 import {setSelectedTab} from "../stores/tabs/tabActions";
 
-import {Home,
-Search,cartTab,Favourite,Notification} from "../screens";
+import Home from "../screens/Home/Home";
 
 import {
     COLORS,

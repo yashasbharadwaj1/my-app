@@ -1,7 +1,11 @@
 import React from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    Image,
+    FlatList
 } from 'react-native';
 
 const Home = () => {

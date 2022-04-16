@@ -17,6 +17,8 @@ import {
   icons,
   dummyData
 } from "../constants/index";
+import  Notification from '../screens/Notification/Notification';
+import CartTab from '../screens/Cart/CartTab';
 
 const Drawer = createDrawerNavigator() 
 
@@ -143,9 +145,20 @@ return(
               isFocused={selectedTab == constants.screens.notification}
               onPress={()=>{
                 setSelectedTab(constants.screens.notification)
-                navigation.navigate("MainLayout")
+                navigation.navigate("Notifications")
               }}
               />
+
+              <CustomDrawerItem
+              label={constants.screens.cart}
+              icon={icons.cart}
+              isFocused={selectedTab == constants.screens.cart}
+              onPress={()=>{
+                setSelectedTab(constants.screens.cart)
+                navigation.navigate("your cart")
+              }}
+              />
+
                 <CustomDrawerItem
               label={constants.screens.favourite}
               icon={icons.favourite}
@@ -168,16 +181,13 @@ return(
               label="Track Your Order"
               icon={icons.location}
               />
-                <CustomDrawerItem
-              label="Coupons"
-              icon={icons.coupon}
-              />
+              
                 <CustomDrawerItem
               label="Settings"
               icon={icons.setting}
               />
                 <CustomDrawerItem
-              label="help center"
+              label="reach out to us "
               icon={icons.help}
               />
 
@@ -236,7 +246,8 @@ const MyDrawer=({selectedTab,setSelectedTab}) => {
        <Drawer.Screen name="MainLayout">
          {props => <MainLayout {...props}/>}
        </Drawer.Screen>
-
+       <Drawer.Screen name="Notifications" component={Notification} />
+       <Drawer.Screen name="your cart" component={CartTab} />
    </Drawer.Navigator>
   </View>
   )
