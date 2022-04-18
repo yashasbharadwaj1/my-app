@@ -8,7 +8,8 @@ import {
     FlatList,
     TextInput
 } from 'react-native';
-
+import {connect} from "react-redux";
+import {setSelectedTab} from "../../stores/tabs/tabActions";
 import HorizontalFoodCard from "../../components/HorizontalFoodCard"
 import {
     COLORS,
@@ -54,7 +55,7 @@ const Section =({title,onPress,children}) =>{
         </View>
     )
 }
-const Home = () => {
+const Home = ({ navigation }) => {
     const[selectedCategoryID,setSelectedCategoryID] =React.useState(1)
     const[selectedMenuType,setSelectedMenuType]=React.useState(1)
     const[menuList,setMenuList] = React.useState([])
@@ -116,7 +117,7 @@ const Home = () => {
                  width:150
              }}
              item={item}
-             onPress={()=>console.log('horizontalfoodcard')}
+            
              
              />
 
@@ -170,7 +171,8 @@ const Home = () => {
                          width:110
                      }}
                      item={item}
-                     onPress={()=>console.log("HorizontalFoodCard")}
+                     onPress={() => navigation.navigate('food detail')}
+                    
                      
                      
                      
@@ -192,4 +194,17 @@ const Home = () => {
     )
 }
 
-export default Home;
+
+function mapStateToProps(state) {
+    return{
+      selectedTab:state.tabReducer.selectedTab
+    }
+  }
+  function mapDispatchToProps(dispatch) {
+    return {
+      setSelectedTab:(selectedTab) => {
+        return dispatch(setSelectedTab(selectedTab))
+      }
+    }
+  }
+  export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -8,9 +8,10 @@ import {Provider} from "react-redux"
 import thunk from "redux-thunk"
 import combineReducers from "./stores/rootReducer";
 
-import Home from "./screens/Home/Home"
+import HorizontalFoodCard from "./components/HorizontalFoodCard";
 
 import { createStackNavigator } from '@react-navigation/stack';
+import FoodDetail from './screens/Food/FoodDetail';
 const Stack = createStackNavigator();
 
 const store = createStore(
@@ -33,6 +34,8 @@ export default function App() {
                     name="Home"
                     component={MyDrawer}
                 />
+                   
+                   
             </Stack.Navigator>
       
     </NavigationContainer>

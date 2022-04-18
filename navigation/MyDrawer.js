@@ -4,7 +4,7 @@ import { createDrawerNavigator,
 DrawerContentScrollView } from '@react-navigation/drawer';
 
 
-import MainLayout from "../screens/MainLayout"
+
 import {setSelectedTab} from "../stores/tabs/tabActions";
 import {connect} from "react-redux";
 import tabreducer from "../stores/tabs/tabReducer";
@@ -19,6 +19,8 @@ import {
 } from "../constants/index";
 import  Notification from '../screens/Notification/Notification';
 import CartTab from '../screens/Cart/CartTab';
+import Home from '../screens/Home/Home';
+import FoodDetail from '../screens/Food/FoodDetail';
 
 const Drawer = createDrawerNavigator() 
 
@@ -132,7 +134,7 @@ return(
               isFocused={selectedTab == constants.screens.home}
               onPress={()=>{
                 setSelectedTab(constants.screens.home)
-                navigation.navigate("MainLayout")
+                navigation.navigate("home")
               }}
               />
              <CustomDrawerItem
@@ -165,7 +167,7 @@ return(
               isFocused={selectedTab == constants.screens.favourite}
               onPress={()=>{
                 setSelectedTab(constants.screens.favourite)
-                navigation.navigate("MainLayout")
+                navigation.navigate("home")
               }}
               />
             {/*line divider*/}
@@ -230,7 +232,7 @@ const MyDrawer=({selectedTab,setSelectedTab}) => {
    sceneContainerStyle = {{
        backgroundColor:'transparent'
    }}
-   initialRouteName="MainLayout"
+   initialRouteName="home"
    drawerContent={props => {
     
        return (
@@ -243,11 +245,16 @@ const MyDrawer=({selectedTab,setSelectedTab}) => {
    }}
 
    >
-       <Drawer.Screen name="MainLayout">
-         {props => <MainLayout {...props}/>}
+       <Drawer.Screen name="home">
+         {props => <Home {...props}/>}
        </Drawer.Screen>
        <Drawer.Screen name="Notifications" component={Notification} />
        <Drawer.Screen name="your cart" component={CartTab} />
+       <Drawer.Screen name="food detail" component={FoodDetail} />
+       
+      
+         
+      
    </Drawer.Navigator>
   </View>
   )

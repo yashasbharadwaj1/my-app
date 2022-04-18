@@ -27,6 +27,7 @@ export default function HorizontalFoodCard({containerStyle,imageStyle,item,onPre
      backgroundColor:COLORS.lightGray2,
      ...containerStyle
    }}
+  onPress={onPress}
    >
    <Image 
    source={item.image}
