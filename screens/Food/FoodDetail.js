@@ -9,7 +9,10 @@ import {
     dummyData
 } from "../../constants/index";
 import Header from "../../components/Header";
+import CartQuantityButton from "../../components/CartQuantityButton";
 const FoodDetail =({navigation}) => {
+
+    const[foodItem,setFoodItem]=React.useState(dummyData.vegBiryani)
 
      function renderHeader() {
          return (
@@ -21,6 +24,13 @@ const FoodDetail =({navigation}) => {
                  marginTop : 40,
              }}
         
+
+             rightComponent={ 
+                 <CartQuantityButton 
+                 quantity={3}
+                 />
+                 
+             }
              />
           
          )
@@ -39,7 +49,10 @@ const FoodDetail =({navigation}) => {
           {renderHeader()}
 
            {/*body*/} 
-           <Text>working</Text>
+           <ScrollView> 
+               {renderDetails()}
+           </ScrollView>
+           
 
             {/*footer*/}
 
