@@ -1,7 +1,9 @@
 import React from 'react';
 import {
     View,
-    Text
+    Text,
+    Image,
+    StyleSheet
 } from 'react-native';
 
 const CartTab = () => {

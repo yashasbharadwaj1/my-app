@@ -120,4 +120,5 @@ export default {
     myProfile,
     categories,
     menu,
+    hamburger, hotTacos, wrapSandwich,vegBiryani
 }

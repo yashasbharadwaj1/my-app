@@ -20,7 +20,8 @@ const setting = require("../assets/icons/setting.png")
 const star = require("../assets/icons/star.png")
 const my_wallet = require("../assets/icons/wallet.png")
 const help = require("../assets/icons/help.png")
-
+const plus = require("../assets/icons/plus.png")
+const minus = require("../assets/icons/minus.png")
 export default {
     coupon,
     cross,
@@ -44,4 +45,6 @@ export default {
     star,
     my_wallet,
     help,
+    plus,
+    minus
 }
