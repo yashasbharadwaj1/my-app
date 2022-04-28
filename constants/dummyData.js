@@ -115,10 +115,26 @@ const menu = [
 
 ]
 
+const myCart = [
+    {
+        ...hamburger,
+        qty: 1
+    },
+    {
+        ...hotTacos,
+        qty: 1
+    },
+    {
+        ...vegBiryani,
+        qty: 1
+    }
+]
+
 
 export default {
     myProfile,
     categories,
     menu,
-    hamburger, hotTacos, wrapSandwich,vegBiryani
+    hamburger, hotTacos, wrapSandwich,vegBiryani,
+    myCart
 }
